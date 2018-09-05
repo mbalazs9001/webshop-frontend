@@ -1,0 +1,14 @@
+<div *ngFor="let category of categories"
+     routerLink="/product-list"
+     [queryParams]="{'category': category.id}"
+>{{category.name}}
+  <ul>
+    <li *ngFor="let supplier of suppliers"
+        routerLink="/product-list"
+        [queryParams]="{'category': category.id, 'supplier': supplier.id}"
+        click-stop-propagation
+    >
+      {{supplier.name}}
+    </li>
+  </ul>
+</div>

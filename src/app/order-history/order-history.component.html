@@ -1,0 +1,16 @@
+<div class="grid">
+
+  <div *ngFor="let order of completedOrders" class="col-6 pane">
+    <span class="order-date">{{order.date}}</span>
+    <span class="total-price">Total: {{order.total}} USD</span>
+    <hr>
+    <table>
+      <tr *ngFor="let product of order.products">
+        <td>{{product.name}}</td>
+        <td>{{product.quantity}} pc.</td>
+        <td>{{product.price}} {{product.currency}}</td>
+      </tr>
+    </table>
+  </div>
+
+</div>

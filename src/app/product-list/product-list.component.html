@@ -1,0 +1,11 @@
+<div class="grid">
+  <div *ngFor="let product of products | filter:categoryFilter:supplierFilter" class="col-3 pane">
+    <img [src]="product.imageName" alt="{{ product.name }}">
+    <h4>{{ product.name }}</h4>
+    <p>{{ product.description }}</p>
+    <span class="price-tag">{{ product.defaultPrice }} {{ product.defaultCurrency }}</span>
+    <a *ngIf="authService.isLoggedIn()" class="btn" (click)="productOrderService.itemToCart(product)">Buy Now
+      <img src="../../assets/cart-plus.svg" alt="Buy">
+    </a>
+  </div>
+</div>

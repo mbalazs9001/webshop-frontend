@@ -1,0 +1,18 @@
+<div class="pane center-block">
+
+  <h2>Thank your for your order!</h2>
+  <p>An email with the details of your order will soon arrive on your email address.</p>
+  <span class="payment-id">Payment ID: {{ paymentId }}</span>
+  <span class="total-price">Total price: {{ totalPrice }} USD</span>
+  <hr>
+  <table>
+    <tr *ngFor="let product of products">
+      <td>{{product.name}}</td>
+      <td>{{product.quantity}} pc.</td>
+      <td>{{product.price}} {{product.currency}}</td>
+    </tr>
+  </table>
+
+    <button class="btn" (click)="navigateBack()">Go back to Shopping</button>
+
+</div>

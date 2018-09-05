@@ -1,0 +1,16 @@
+a {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  line-height: 50px;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.center-block {
+  text-align: center;
+}
+
+h3 {
+  margin: auto;
+}

@@ -1,0 +1,29 @@
+<nav>
+
+  <div id="menu-toggle">Menu
+    <div id="menu">
+      <app-menu></app-menu>
+    </div>
+  </div>
+
+  <div routerLink="/">
+    Codeberg's Shop of Needful Things
+  </div>
+
+  <ul *ngIf="!authService.isLoggedIn()">
+    <li routerLink="register">Sign Up</li>
+    <li routerLink="login">Login</li>
+  </ul>
+
+  <ul *ngIf="authService.isLoggedIn()">
+    <li routerLink="/order-history">Orders</li>
+    <li routerLink="address">Address</li>
+    <li (click)="logout()">Logout</li>
+  </ul>
+
+  <div id="shopping-cart-toggle" (mouseenter)="showDiv()" (mouseleave)="hideDiv()" *ngIf="authService.isLoggedIn()">Cart({{getNumberInCart()}})
+    <div id="shopping-cart">
+      <app-shopping-cart></app-shopping-cart>
+    </div>
+  </div>
+</nav>

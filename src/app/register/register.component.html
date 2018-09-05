@@ -1,0 +1,56 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="pane center-block">
+
+    <h3>Sign Up</h3>
+
+      <div formGroupName="userInfo">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input formControlName="name" id="name" class="form-control" type="text">
+          <div class="helper-text">Please give us your real name, otherwise your orders may not arrive!</div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone number</label>
+          <input formControlName="phone" id="phone" class="form-control" type="text">
+          <div class="helper-text">A valid phone number is required.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input formControlName="email" id="email" class="form-control" type="email">
+          <div *ngIf="!registerForm.get('userInfo.email').valid &&
+                      registerForm.get('userInfo.email').touched &&
+                      registerForm.get('userInfo.email').errors"
+          >
+            <div *ngIf="registerForm.get('userInfo.email').errors['email'] ||
+                        registerForm.get('userInfo.email').errors['required']"
+                 class="helper-text"
+            >
+              Please enter a valid email address!
+            </div>
+            <div *ngIf="registerForm.get('userInfo.email').errors['emailTaken']" class="helper-text">
+              That email address is already in-use!
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input formControlName="password" id="password" class="form-control" type="password">
+          <div class="helper-text">Your password has to be at least 5 characters long!</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="verify-password">Verify password</label>
+        <input formControlName="verifyPassword" id="verify-password" class="form-control" type="password">
+        <div class="helper-text">Your passwords have to match!</div>
+      </div>
+
+      <button type="submit" class="btn btn-block"
+              [disabled]="!registerForm.valid || registerForm.get('userInfo.password').value !== registerForm.get('verifyPassword').value">
+        Sign Up
+      </button>
+
+</form>
+

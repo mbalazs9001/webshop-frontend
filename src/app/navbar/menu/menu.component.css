@@ -1,0 +1,26 @@
+div, li {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  text-align: center;
+  background: #0084b4;
+}
+div {
+  position: relative;
+}
+div:hover, li:hover {
+  background: #1dcaff;
+}
+div:hover ul {
+  display: block;
+}
+ul {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 100%;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8);
+}
+li {
+  min-width: 15rem;
+}

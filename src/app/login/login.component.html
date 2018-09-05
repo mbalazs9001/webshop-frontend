@@ -1,0 +1,22 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="pane center-block">
+
+  <h3>Sign In</h3>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input formControlName="email" id="email" class="form-control" type="email">
+    <div class="helper-text">Please enter a valid email address!</div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input formControlName="password" id="password" class="form-control" type="password">
+    <div class="helper-text">Your password has to be at least 5 characters long!</div>
+  </div>
+
+  <button type="submit" class="btn btn-block" [disabled]="!loginForm.valid">
+    Login
+  </button>
+
+</form>
+

@@ -1,0 +1,25 @@
+<div class="center-block">
+  <div class="form-group form-control">
+    <img src="http://www.prepbootstrap.com/Content/images/shared/misc/creditcardicons.png" alt="PayPal">
+    <div class="form-control">
+      <div class="form-group">
+        <label for="card-number">Card number:</label>
+        <input id="card-number" class="form-control" type="text">
+      </div>
+      <div class="form-group">
+        <label for="card-exp">Expriation date:</label>
+        <input id="card-exp" class="form-control" type="text">
+      </div>
+      <div class="form-group">
+        <label for="card-owner">Card owner:</label>
+        <input id="card-owner" class="form-control" type="text">
+      </div>
+      <div class="form-group">
+        <label for="card-cv">CV code:</label>
+        <input id="card-cv" class="form-control" type="text">
+      </div>
+      <button class="btn btn-block" (click)="orderService.sendOrder()">Confirm order</button>
+    </div>
+  </div>
+</div>
+

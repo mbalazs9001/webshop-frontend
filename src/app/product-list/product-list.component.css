@@ -1,0 +1,43 @@
+.pane:hover {
+  animation: lift-up 0.15s ease-out forwards;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, .3);
+}
+@keyframes lift-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+.pane > .btn {
+  display: none;
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  height: 2rem;
+  line-height: 2rem;
+  width: auto;
+  background: #32CD32;
+}
+.btn > img {
+  width: inherit;
+  height: inherit;
+  float: right;
+}
+.pane:hover > .btn {
+  display: inline-block;
+}
+
+.price-tag {
+  position: absolute;
+  bottom: 3%;
+  left: 4%;
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 3rem;
+}
+

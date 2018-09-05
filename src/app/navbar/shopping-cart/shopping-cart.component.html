@@ -1,0 +1,17 @@
+<div id="cart">
+   <div class="pane product-order" *ngFor="let order of orders">
+    <a (click)="removeOrder(order)" class="btn close-btn">&times;</a>
+    <img src="{{order.product.imageName}}" alt="stuff">
+    <p>{{order.product.name}}</p>
+    <div class="quantity-control">
+      <a (click)="decrementQuantity(order)" class="btn rem-btn">-</a>
+      <span class="quantity">{{order.quantity}}db</span>
+      <a (click)="incrementQuantity(order)" class="btn add-btn">+</a>
+    </div>
+    <span class="price-tag">{{order.quantity * order.product.defaultPrice}}$</span>
+  </div>
+
+  <button class="btn checkout-btn" (click)="checkout()">Checkout</button>
+  <span id="total-price">Total price: {{getSumPrice()}}$</span>
+
+</div>
